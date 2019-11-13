@@ -1,0 +1,20 @@
+def guessgame(res):
+    flag = 0
+    while(True):
+        guess = int(input('Make a guess: '))
+        flag+=1
+        if guess == res:
+            print('You guessed right. Total tries taken: %s\n'%flag)
+            break
+        elif guess>res:
+            print('Too High!')
+        else:
+            print('Too Low!')
+from random import randint
+while(True):
+    gen = randint(1,9)
+    print('A random number has been generated.\n')
+    guessgame(gen)
+    choice = input('Do you wanna play again(type exit if you want to end the game): ')
+    if choice.lower() == 'exit':
+        break
